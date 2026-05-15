@@ -6,7 +6,6 @@ on:
 
 env:
   PYTHON_VERSION: 3.9
-  POETRY_PATH: "$HOME/.poetry/bin"
 
 jobs:
   code_analysis:
@@ -23,8 +22,6 @@ jobs:
         run: cd ${{ github.workspace }}
       - name: Setup Environment
         run: make environment
-      - name: Add Poetry Path
-        run: echo ${{ env.POETRY_PATH }} >> $GITHUB_PATH
       - name: Install Dependencies
         run: make install
       - name: Lint
@@ -52,8 +49,6 @@ jobs:
         run: cd ${{ github.workspace }}
       - name: Setup Environment
         run: make environment
-      - name: Add Poetry Path
-        run: echo ${{ env.POETRY_PATH }} >> $GITHUB_PATH
       - name: Install Dependencies
         run: make install
       - name: Build
@@ -75,14 +70,12 @@ jobs:
         run: cd ${{ github.workspace }}
       - name: Setup Environment
         run: make environment
-      - name: Add Poetry Path
-        run: echo ${{ env.POETRY_PATH }} >> $GITHUB_PATH
       - name: Install Dependencies
         run: make install
       - name: Build
         run: make build validate
       - name: Integration Tests
-        run: make test-integration
+        run: make integration-tests
 
   release:
     name: Release
@@ -99,12 +92,12 @@ jobs:
         run: cd ${{ github.workspace }}
       - name: Setup Environment
         run: make environment
-      - name: Add Poetry Path
-        run: echo ${{ env.POETRY_PATH }} >> $GITHUB_PATH
       - name: Install Dependencies
         run: make install
       - name: Get Version
-        run: echo "PACKAGE_VERSION=$(echo $VERSION | poetry version --short)" >> $GITHUB_ENV
+        run: |
+          PACKAGE_VERSION=$(uv run --locked python -c 'import pathlib; print(next(line.split("\"")[1] for line in pathlib.Path("pyproject.toml").read_text().splitlines() if line.startswith("version = ")))')
+          echo "PACKAGE_VERSION=${PACKAGE_VERSION}" >> $GITHUB_ENV
       - name: Generate release notes
         run: make release-notes
       - name: Create Release

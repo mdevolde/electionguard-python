@@ -53,7 +53,7 @@ This documentation is a reference on how to setup a brand new computer (in this 
 * Install chocolatey using powershell command from https://chocolatey.org/install
 * Install make
     * choco install make	
-* Install poetry (powershell) https://python-poetry.org/docs
+* Install uv (powershell) https://docs.astral.sh/uv/getting-started/installation/
     * Add to path (See "Set Environment Variables" below on steps to get to the path)
 
 ## Download Python Source Code
@@ -92,6 +92,6 @@ This documentation is a reference on how to setup a brand new computer (in this 
 * Open Terminal and run the following commands
     * make environment
         * There will be an error at the end.  This is normal
-    * poetry run eg 
+    * uv run eg 
         * should show the help for the eg command
 
