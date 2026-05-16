@@ -137,7 +137,7 @@ dependency-graph-ci:
 # Sample Data
 fetch-sample-data:
 	@echo ⬇️ FETCH Sample Data
-	wget -O sample-data.zip https://github.com/microsoft/electionguard/releases/download/v1.0/sample-data.zip
+	wget -O sample-data.zip https://github.com/Election-Tech-Initiative/electionguard/releases/download/v1.0/sample-data.zip
 	unzip -o sample-data.zip
 
 generate-sample-data:

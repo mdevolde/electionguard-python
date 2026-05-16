@@ -33,14 +33,14 @@ dependencies = [
 ]
 
 [project.urls]
-homepage = "https://microsoft.github.io/electionguard-python"
-repository = "https://github.com/microsoft/electionguard-python"
-documentation = "https://microsoft.github.io/electionguard-python"
-"GitHub Pages" = "https://microsoft.github.io/electionguard-python"
+homepage = "https://Election-Tech-Initiative.github.io/electionguard-python"
+repository = "https://github.com/Election-Tech-Initiative/electionguard-python"
+documentation = "https://Election-Tech-Initiative.github.io/electionguard-python"
+"GitHub Pages" = "https://Election-Tech-Initiative.github.io/electionguard-python"
 "Read the Docs" = "https://electionguard-python.readthedocs.io"
-"Releases" = "https://github.com/microsoft/electionguard-python/releases"
-"Milestones" = "https://github.com/microsoft/electionguard-python/milestones"
-"Issue Tracker" = "https://github.com/microsoft/electionguard-python/issues"
+"Releases" = "https://github.com/Election-Tech-Initiative/electionguard-python/releases"
+"Milestones" = "https://github.com/Election-Tech-Initiative/electionguard-python/milestones"
+"Issue Tracker" = "https://github.com/Election-Tech-Initiative/electionguard-python/issues"
 
 [dependency-groups]
 dev = [

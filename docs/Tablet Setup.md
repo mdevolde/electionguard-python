@@ -60,7 +60,7 @@ This documentation is a reference on how to setup a brand new computer (in this 
 * Open a Command prompt and use the following commands
     * mkdir code
     * cd code
-    * git clone https://github.com/microsoft/electionguard-python
+    * git clone https://github.com/Election-Tech-Initiative/electionguard-python
 
 
 ## Terminal Settings
