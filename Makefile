@@ -1,5 +1,10 @@
 .PHONY: all environment openssl-fix install build auto-lint lint validate test test-example unit-tests property-tests integration-tests coverage coverage-html coverage-xml coverage-erase bench fetch-sample-data generate-sample-data docs-serve docs-build docs-deploy-ci dependency-graph-ci publish-ci publish-test-ci release-zip-ci release-notes egui start-db stop-db build-egui start-egui stop-egui eg-e2e-simple-election eg-setup-simple-election
 
+UV := $(shell command -v uv 2>/dev/null || true)
+ifeq ($(UV),)
+$(warning uv not found. Install uv (curl -LsSf https://astral.sh/uv/install.sh | sh) to use Makefile targets)
+endif
+
 CODE_COVERAGE ?= 90
 OS ?= $(shell uname -s)
 ifeq ($(OS), Linux)
